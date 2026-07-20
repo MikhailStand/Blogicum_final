@@ -100,6 +100,15 @@ venv\Scripts\activate
 Установить зависимости:
 pip install -r requirements.txt
 
+Настроить секретный ключ Django. Сгенерируйте его и задайте в переменной окружения:
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+export DJANGO_SECRET_KEY="вставьте_сгенерированный_ключ"
+```
+
+Шаблон переменной также есть в файле `.env.example`. Не добавляйте настоящий
+ключ в Git.
+
 Перейти в директорию проекта:
 cd blogicum
 
@@ -133,5 +142,3 @@ http://127.0.0.1:8000/admin/
 10. административная панель;
 11. система комментариев;
 12. разграничение прав доступа.
-# Blogicum_final
-# Blogicum_final
